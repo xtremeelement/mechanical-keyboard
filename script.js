@@ -21,7 +21,8 @@ async function chartIt() {
         {
           label: symbol,
           data: prices,
-          borderColor: "green"
+          borderColor: "red",
+          borderWidth: 1
         }
       ]
     },
@@ -40,6 +41,7 @@ async function getSymbol() {
     .then(function(res) {
       return res.json();
     })
+    //gets data from json file
     .then(function(data) {
       for (var i = 0; i < data.chart.length; i++) {
         prices.push(data.chart[i].open);
@@ -63,6 +65,7 @@ async function getSymbol() {
         document.querySelector(".headLine").innerHTML = data.quote.companyName;
         document.querySelector(".summary").innerHTML = summary;
       }
+      //Adds the news boxes below the graph
       let newsBox = "";
       for (var index = 0; index < 6; index++) {
         newsBox += `
