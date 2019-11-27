@@ -1,5 +1,5 @@
 let myChart = document.getElementById("myChart").getContext("2d");
-let symbol = "";
+let symbol;
 let prices = [];
 let date = [];
 
@@ -26,15 +26,36 @@ async function chartIt() {
         }
       ]
     },
-    options: {}
+    options: {
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: false
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            }
+          }
+        ]
+      }
+    }
   });
 }
 
 //sandbox api = https://sandbox.iexapis.com/stable/stock/${symbol}/batch?types=quote,news,chart&range=1m&last=10&token=Tsk_fb6ca04b1b8e41b18beda113862b1eb3
-//Gets the defined symbol
+//Gets the defined symbol and pulls data from API
 async function getSymbol() {
   prices = [];
   date = [];
+  //modifies link to include symbol variable
   await fetch(
     `https://cloud.iexapis.com/v1/stock/${symbol}/batch?types=quote,news,chart&range=1m&last=10&token=pk_023ec8aa653d4ab2828418e4927b9adb`
   )
@@ -68,12 +89,15 @@ async function getSymbol() {
 
       //Adds the news boxes below the graph
       let newsBox = "";
+
+      //Injects first 6 news fields into html
       for (var index = 0; index < 6; index++) {
         newsBox += `
         <div class="col-4 mt-5">
           <div class="card card-body dynamic">
-            <h2>${data.news[index].headline}</h2>
-            <p>${data.news[index].summary}</p>
+            <h2 class="newsHeader">${data.news[index].headline}</h2>
+            <img class="imgResize" src="${data.news[index].image}" alt="">
+            <p class="newsBody">${data.news[index].summary}</p>
             <a href="${data.news[index].url}" target="_blank">Read More...</a>
           </div>
         </div>
