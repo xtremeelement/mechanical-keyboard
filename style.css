@@ -54,6 +54,10 @@ ul {
   margin-top: 10px;
 }
 
+.chartRow {
+  margin-top: 30px;
+}
+
 a {
   text-decoration: none;
   color: white;

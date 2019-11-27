@@ -78,7 +78,7 @@ async function getSymbol() {
           <li><strong>Market Cap:</strong> ${data.quote.marketCap}</li>
           <li><strong>52 Week High:</strong> ${data.quote.week52High}</li>
           <li><strong>52 Week Low:</strong> ${data.quote.week52Low}</li>
-          <li><strong>Latest Source:</strong> ${data.quote.latestSource}</li>
+          <li><strong>Latest Update:</strong> ${data.quote.latestTime}</li>
         </ul>`;
         document.querySelector(".headLine").innerHTML = data.quote.companyName;
         document.querySelector(".summary").innerHTML = summary;
