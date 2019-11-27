@@ -53,8 +53,8 @@ async function chartIt() {
 //sandbox api = https://sandbox.iexapis.com/stable/stock/${symbol}/batch?types=quote,news,chart&range=1m&last=10&token=Tsk_fb6ca04b1b8e41b18beda113862b1eb3
 //Gets the defined symbol and pulls data from API
 async function getSymbol() {
-  prices = [];
-  date = [];
+  prices.length = 0;
+  date.length = 0;
   //modifies link to include symbol variable
   await fetch(
     `https://cloud.iexapis.com/v1/stock/${symbol}/batch?types=quote,news,chart&range=1m&last=10&token=pk_023ec8aa653d4ab2828418e4927b9adb`
@@ -67,7 +67,7 @@ async function getSymbol() {
     .then(function(data) {
       for (var i = 0; i < data.chart.length; i++) {
         prices.push(data.chart[i].open);
-        date.push(data.chart[i].date);
+        date.push(data.chart[i].label);
         symbol = data.quote.symbol;
 
         //builds items with json data
