@@ -83,7 +83,8 @@ async function getSymbol() {
         document.querySelector(".headLine").innerHTML = data.quote.companyName;
         document.querySelector(".summary").innerHTML = summary;
         document.querySelector(".topSymbol").innerHTML = data.quote.symbol;
-        document.querySelector(".currentPrice").innerHTML = data.quote.close;
+        document.querySelector(".currentPrice").innerHTML =
+          data.quote.previousClose;
         document.querySelector(".changePrice").innerHTML = data.quote.change;
       }
 
