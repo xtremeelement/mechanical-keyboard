@@ -1,5 +1,22 @@
 body {
   background-color: #343a40;
+  box-sizing: border-box;
+}
+
+.topSymbol {
+  color: white;
+  margin: 0;
+  font-size: 40px;
+}
+
+.price {
+  color: white;
+  margin: 0;
+}
+
+.change {
+  color: white;
+  font-size: 12px;
 }
 
 .card-body {

@@ -1,5 +1,5 @@
 let myChart = document.getElementById("myChart").getContext("2d");
-let symbol = "amd";
+let symbol = "";
 let prices = [];
 let date = [];
 
@@ -41,30 +41,31 @@ async function getSymbol() {
     .then(function(res) {
       return res.json();
     })
+
     //gets data from json file
     .then(function(data) {
       for (var i = 0; i < data.chart.length; i++) {
         prices.push(data.chart[i].open);
         date.push(data.chart[i].date);
         symbol = data.quote.symbol;
-        let primaryExch = data.quote.primaryExchange;
-        let markCap = data.quote.marketCap;
-        let yearHigh = data.quote.week52High;
-        let yearLow = data.quote.week52Low;
-        let source = data.quote.latestSource;
 
+        //builds items with json data
         summary = `
         <ul>
-          <li><strong>Primary Stock Exchange:</strong> ${primaryExch}</li>
-          <li><strong>Stock Symbol:</strong> ${symbol}</li>
-          <li><strong>Market Cap:</strong> ${markCap}</li>
-          <li><strong>52 Week High:</strong> ${yearHigh}</li>
-          <li><strong>52 Week Low:</strong> ${yearLow}</li>
-          <li><strong>Latest Source:</strong> ${source}</li>
+          <li><strong>Primary Stock Exchange:</strong> ${data.quote.primaryExchange}</li>
+          <li><strong>Stock Symbol:</strong> ${data.quote.symbol}</li>
+          <li><strong>Market Cap:</strong> ${data.quote.marketCap}</li>
+          <li><strong>52 Week High:</strong> ${data.quote.week52High}</li>
+          <li><strong>52 Week Low:</strong> ${data.quote.week52Low}</li>
+          <li><strong>Latest Source:</strong> ${data.quote.latestSource}</li>
         </ul>`;
         document.querySelector(".headLine").innerHTML = data.quote.companyName;
         document.querySelector(".summary").innerHTML = summary;
+        document.querySelector(".topSymbol").innerHTML = data.quote.symbol;
+        document.querySelector(".currentPrice").innerHTML = data.quote.close;
+        document.querySelector(".changePrice").innerHTML = data.quote.change;
       }
+
       //Adds the news boxes below the graph
       let newsBox = "";
       for (var index = 0; index < 6; index++) {
@@ -79,9 +80,5 @@ async function getSymbol() {
         `;
         document.querySelector(".newsBox").innerHTML = newsBox;
       }
-
-      return prices;
-      return date;
-      return symbol;
     });
 }
