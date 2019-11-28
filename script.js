@@ -21,7 +21,7 @@ async function chartIt() {
         {
           label: symbol,
           data: prices,
-          borderColor: "red",
+          borderColor: "#66fcf1",
           borderWidth: 1
         }
       ]

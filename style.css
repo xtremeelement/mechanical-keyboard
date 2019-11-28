@@ -1,26 +1,29 @@
 body {
-  background-color: #343a40;
+  background-color: #1f2833;
   box-sizing: border-box;
 }
 
 .topSymbol {
-  color: white;
+  color: #66fcf1;
   margin: 0;
   font-size: 40px;
 }
 
+.navbar-brand {
+  color: #66fcf1;
+}
 .price {
-  color: white;
+  color: #66fcf1;
   margin: 0;
 }
 
 .change {
-  color: white;
+  color: #66fcf1;
   font-size: 12px;
 }
 
 .card-body {
-  background-color: lightslategrey;
+  background-color: #1f2833;
   color: white;
   text-align: center;
   border-radius: 0;
@@ -41,7 +44,7 @@ ul {
 
 .newsStories {
   margin-top: 20px;
-  color: white;
+  color: #45a29e;
 }
 
 .newsHeader {
@@ -60,7 +63,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: white;
+  color: #66fcf1;
 }
 a:hover {
   color: lightslategrey;
