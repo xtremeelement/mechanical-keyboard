@@ -107,3 +107,32 @@ async function getSymbol() {
       }
     });
 }
+
+document.querySelector("#login").addEventListener("click", openLoginModal);
+document
+  .querySelector(".closeModalLogin")
+  .addEventListener("click", closeModalLoginBtn);
+
+document
+  .querySelector("#createAccount")
+  .addEventListener("click", createAccountModal);
+
+document
+  .querySelector(".closeModalCreate")
+  .addEventListener("click", closeModalCreate);
+
+function openLoginModal() {
+  document.querySelector(".modallogin").style.display = "flex";
+}
+
+function closeModalLoginBtn() {
+  document.querySelector(".modallogin").style.display = "none";
+}
+
+function createAccountModal() {
+  document.querySelector(".modalcreate").style.display = "flex";
+}
+
+function closeModalCreate() {
+  document.querySelector(".modalcreate").style.display = "none";
+}

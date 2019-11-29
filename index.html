@@ -49,12 +49,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              ><span class="sr-only">(current)</span></a
+            <a class="nav-link" href="#" id="login"
+              >Login<span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"></a>
+            <a class="nav-link" href="#" id="createAccount">Create</a>
           </li>
         </ul>
       </div>
@@ -71,7 +71,6 @@
       <div class="row">
         <h6 class="change">Change: (<span class="changePrice">0.23</span>)</h6>
       </div>
-
       <div class="row chartRow">
         <div class="col-8">
           <canvas id="myChart"></canvas>
@@ -79,8 +78,7 @@
         <div class="col-4">
           <div class="card card-body snapshot">
             <h4 class="headLine"></h4>
-            <p class="summary">
-              
+            <p class="summary">              
             </p>
           </div>
         </div>
@@ -88,12 +86,32 @@
       <div class="row">
         <h1 class="newsStories">Top News Stories</h1>
       </div>
-      <div class="row newsBox">    
-          
+      <div class="row newsBox">          
       </div>
     </div>
-  </div>
+  </div> 
 </div>
+<div class="modallogin">
+  <div class="loginModal">
+    <h1 class="closeModal closeModalLogin">&times</h1>
+    <h1 class="modalHeader">Login <i class="fas fa-dollar-sign"></i></h1>
+    <input type="text" class="inputName" value="username">
+    <input type="text" class="inputPassword" value="password">
+    <button class="submitBtn modalButtons">Submit</button>
+    <button class="forgotPassword modalButtons">Forgot Password</button>    
+  </div>  
+</div>
+<div class="modalcreate" id="testThing">
+    <div class="createModal">
+      <h1 class="closeModal closeModalCreate">&times</h1>
+      <h1 class="modalHeader">Create Account <i class="fas fa-dollar-sign"></i></h1>
+      <input type="text" class="inputName" value="username">
+      <input type="text" class="inputPassword" value="password">
+      <button class="submitBtn modalButtons">Create Account</button>
+         
+    </div>  
+</div>
+
 
     <footer>
       <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
@@ -115,6 +133,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
