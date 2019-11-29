@@ -117,7 +117,7 @@ var createOpenM = document.querySelector(".modalcreate");
 
 //Begins login/create account modal display
 loginBtn.addEventListener("click", toggleLoginModal);
-closeLogin.addEventListener("click", toggleModalLogin);
+closeLogin.addEventListener("click", toggleLoginModal);
 createBtn.addEventListener("click", toggleCreateModal);
 closeCreate.addEventListener("click", toggleCreateModal);
 

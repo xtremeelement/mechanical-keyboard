@@ -100,7 +100,8 @@ a:hover {
 
 .loginModal {
   border-radius: 5px;
-  background-color: white;
+  color: white;
+  background-color: #1f2833;
   position: relative;
   width: 50%;
   height: 50%;
@@ -125,7 +126,8 @@ a:hover {
 
 .createModal {
   border-radius: 5px;
-  background-color: white;
+  color: white;
+  background-color: #1f2833;
   position: relatve;
   width: 50%;
   height: 50%;
