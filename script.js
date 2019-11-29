@@ -108,31 +108,32 @@ async function getSymbol() {
     });
 }
 
-document.querySelector("#login").addEventListener("click", openLoginModal);
-document
-  .querySelector(".closeModalLogin")
-  .addEventListener("click", closeModalLoginBtn);
+var loginBtn = document.querySelector("#login");
+var closeLogin = document.querySelector(".closeModalLogin");
+var createBtn = document.querySelector("#createAccount");
+var closeCreate = document.querySelector(".closeModalCreate");
+var loginOpenM = document.querySelector(".modallogin");
+var createOpenM = document.querySelector(".modalcreate");
 
-document
-  .querySelector("#createAccount")
-  .addEventListener("click", createAccountModal);
+//Begins login/create account modal display
+loginBtn.addEventListener("click", toggleLoginModal);
+closeLogin.addEventListener("click", toggleModalLogin);
+createBtn.addEventListener("click", toggleCreateModal);
+closeCreate.addEventListener("click", toggleCreateModal);
 
-document
-  .querySelector(".closeModalCreate")
-  .addEventListener("click", closeModalCreate);
-
-function openLoginModal() {
-  document.querySelector(".modallogin").style.display = "flex";
+//sets to display or hide the modal login/create section
+function toggleLoginModal() {
+  if (loginOpenM.style.display === "flex") {
+    loginOpenM.style.display = "none";
+  } else {
+    loginOpenM.style.display = "flex";
+  }
 }
 
-function closeModalLoginBtn() {
-  document.querySelector(".modallogin").style.display = "none";
-}
-
-function createAccountModal() {
-  document.querySelector(".modalcreate").style.display = "flex";
-}
-
-function closeModalCreate() {
-  document.querySelector(".modalcreate").style.display = "none";
+function toggleCreateModal() {
+  if (createOpenM.style.display === "flex") {
+    createOpenM.style.display = "none";
+  } else {
+    createOpenM.style.display = "flex";
+  }
 }
